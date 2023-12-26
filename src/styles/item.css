@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.green {
+  color: #34c77b !important;
+}
+.item {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.sub-item2 {
+  position: relative;
+}
+.sub-item4 {
+  text-align: end;
+}
+
+.item-statue {
+  position: absolute;
+  right: 8px;
+  top: 1px;
+  background-color: #34c77b;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+.sub-item1 {
+  color: black;
+  font-size: 16px !important;
+}
+.item .text2 {
+  display: flex;
+  flex-wrap: nowrap;
+  color: #999;
+}
+.section3 .button {
+  width: 150px !important;
+}

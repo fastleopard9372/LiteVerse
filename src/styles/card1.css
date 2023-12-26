@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card-container {
+  border-radius: 10px;
+  border: 1px solid var(--Primary, #404be3);
+  background: var(--White, #0a1020);
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  font-family: "Josefin Sans";
+}
+.card1 .card-img {
+  position: relative;
+}
+@media (min-width: 1440px) {
+  .card1 .card-img img {
+    width: 100%;
+  }
+}
+.card1 .section-top-rect img {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+}
+/* .button {
+  width: 116px !important;
+} */
+.card1 .card-time {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  z-index: 100;
+}
+.card1 .card-time > span {
+  border-radius: 5px;
+  background: var(--Primary, #404be3);
+  padding: 5px 10px;
+  text-align: center;
+  width: 150px;
+}
+.card1 .card-title {
+  font-family: Josefin Sans;
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 15px;
+  color: #fff !important;
+}
+.card1 .card-body {
+  padding: 0;
+}
+
+.card1 .card-follow-count {
+  color: var(--Black, #fff);
+  font-size: 15px;
+  font-weight: 400;
+  margin-left: -2.5em;
+}
+.card1 .card-username,
+.card1 .card-action {
+  color: var(--Black, #fff);
+  font-family: Josefin Sans;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 38px;
+}
+.card1 .card-mark h3 {
+  line-height: 38px;
+  padding-left: 8px;
+}
+.card1 .card-like {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 23px;
+  border-radius: 5px;
+  padding: 0px 10px;
+  background: rgba(0, 0, 0, 0.3);
+}
+/* .card1 .button {
+  cursor: pointer;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: 2px solid var(--Primary, #404be3);
+  color: #fff;
+  padding: 0px 10px;
+}
+.card1 .button img {
+  border-radius: 50%;
+  border: 2px solid white;
+} */

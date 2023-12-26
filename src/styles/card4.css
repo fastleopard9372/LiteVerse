@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card4 .card-container {
+  border: none;
+  box-shadow: none;
+  padding: 5px;
+}
+.card4 .card-info {
+  display: flex;
+  justify-content: center;
+  border-radius: 0px 0px 10px 10px;
+  border: 1px solid #2081e2;
+  background: var(--White, #0a1020);
+}
+.card4 .card-title {
+  color: var(--Black, #fff) !important;
+  font-family: Poppins;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card4 .card-body {
+  border-radius: 20px 20px 0px 0px;
+}
+.card4 .card-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 30px 10px 0px 10px;
+}
+.right-img,
+.left-img {
+  overflow-x: hidden;
+}
+.card4 .left-img > img {
+  margin-right: -8px !important;
+}
+.card4.center-img > img {
+}
+.card4 .right-img > img {
+  margin-left: -8px !important;
+}
+.section7 .title-sub {
+  color: var(--Black, #fff);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  opacity: 0.4;
+}

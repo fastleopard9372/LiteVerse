@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.card2 .card-avatar {
+  margin-top: -26px;
+}
+.card2 .card-info {
+  text-align: center !important;
+  font-family: Poppins;
+}
+.card2 .card-img img {
+  border-radius: 15px;
+}
+@media (min-width: 1440px) {
+  .card2 .card-img img {
+    width: 100%;
+  }
+}
+.card2 .card-username {
+  color: var(--Black, #fff);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card2 .by {
+  color: var(--Black, #fff);
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card2 .by-2 {
+  color: var(--Primary, #404be3);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.card2 .card-content {
+  color: var(--Black, #fff);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  opacity: 0.4;
+}
