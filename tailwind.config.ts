@@ -42,12 +42,11 @@ const config: Config = {
         primary: "404BE3",
         secondary: "#C051FF",
         'base-100': "#0a1020",
-        accent: "#888",
-        ghost: "#0076E3",
-        'ghost-content':"#0076E3",
+        success: "#0076E3",
+        'success-content': "#FFFFFF",
         "accent-content":"#FFF",
         "neutral":"#161c2b",
-        "--border-btn": "2px"
+        // "--border-btn": "2px"
         },
     },
       "light",],

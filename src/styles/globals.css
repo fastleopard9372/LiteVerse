@@ -96,8 +96,22 @@ main {
 .link {
   text-decoration: none !important;
 }
+
 .btn {
-  padding: 0px 20px !important;
+  @apply rounded-lg;
+  @apply px-5;
+}
+.btn-sm {
+  @apply rounded-[4px];
+}
+.select-sm {
+  @apply rounded-[4px];
+}
+.input-sm {
+  @apply rounded-[4px];
+}
+.btn-light {
+  @apply btn-success bg-neutral-50 border-neutral-50  hover:bg-gray-light hover:border-gray-light text-neutral-900;
 }
 .section {
   margin: auto;
