@@ -14,8 +14,8 @@ const Creators = () => {
   return (
     <div className='section p-5'>
       <div className='base-100'>
-        <div className="card w-full bg-neutral shadow-xl mt-8 mb-8">
-          <div className="card-body">
+        <div className="card w-full bg-neutral shadow-xl mt-8 mb-8 px-0">
+          <div className="card-body px-0">
             <div className='grid grid-cols-3 gap-8'>
               <div className='col-span-1 flex flex-col justify-between'>
                 <p className='text-xl font-bold text-primary mb-2'>Upload Item File</p>

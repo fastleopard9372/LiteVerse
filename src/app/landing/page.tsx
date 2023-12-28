@@ -221,10 +221,10 @@ const Landing = () => {
   }];
   return (
     <div className="landing w-full">
-      <div className='section1 flex justify-center items-center'>
+      <div className='section1 flex justify-center items-center h-[650px]'>
         <div className='back'>
         </div>
-        <div className='section front flex justify-between items-center'>
+        <div className='section front flex justify-between items-center  z-50'>
           <div className='text-section flex flex-col justify-center items-start'>
             <p className='text-5xl mb-7'>
               <span className='p1'>Discover,</span>

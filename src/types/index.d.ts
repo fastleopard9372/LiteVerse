@@ -61,3 +61,17 @@ export interface User_data {
   followers: number 
   link: string;
 }
+
+export interface MiniText_data{
+  _id?: string,
+  kind: string,
+  title: string,
+  content:string
+}
+export interface MiniAvatar_data{
+  _id?: string,
+  kind: string,
+  title: string,
+  state:string
+  url:string
+}

@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { HtmlContext } from 'next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints';
 const navigation = [
   { name: 'Explorer', href: '/', active: 'false' },
-  { name: 'State', href: '/state', active: '' },
+  { name: 'State', href: '#', active: '' },
   { name: 'Creators', href: '/creators', active: '' },
-  { name: 'Contact', href: '/contact', active: '' },
+  { name: 'Contact', href: '#', active: '' },
 ]
 
 const Header = () => {
@@ -27,7 +27,22 @@ const Header = () => {
   }
 
   return (
-    <div className='header w-full flex items-center'>
+    // <div className="navbar bg-base-100">
+    //   <div className="flex-none">
+    //     <button className="btn btn-square btn-ghost" style={{ padding: '0px' }}>
+    //       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+    //     </button>
+    //   </div>
+    //   <div className="flex-1">
+    //     <a className="btn btn-ghost text-xl">daisyUI</a>
+    //   </div>
+    //   <div className="flex-none">
+    //     <button className="btn btn-square btn-ghost" style={{ padding: '0px' }}>
+    //       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+    //     </button>
+    //   </div>
+    // </div>
+    <div className='header w-full flex items-center navbar'>
       <div className="container mx-auto w-full flex justify-between items-center">
         <div className="flex justify-start">
           <Link href='/' onClick={() => handleClick(0)}>
@@ -36,7 +51,7 @@ const Header = () => {
               <p className='logo_name'>Logo Name</p>
             </div>
           </Link>
-          <div className='search-part flex justify-end items-center' >
+          <div className='search-part flex justify-end items-center md:w-auto' >
             <div className='ml-5 mr-5 form-control flex justify-around items-center'>
               <Image
                 src="/search.svg"
@@ -45,9 +60,7 @@ const Header = () => {
                 height={20}
                 priority
               />
-              <input type="text" className='search' placeholder='Search items, collections, and accounts'>
-
-              </input>
+              <input type="text" className='search' placeholder='Search items, collections, and accounts' />
             </div>
           </div>
         </div>

@@ -60,3 +60,6 @@ const config: Config = {
   },
 }
 export default config
+
+
+//"react-elastic-carousel": "^0.11.5",

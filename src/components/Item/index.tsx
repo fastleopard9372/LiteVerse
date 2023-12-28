@@ -2,7 +2,6 @@ import React from 'react'
 import types from '@/types'
 import '@/styles/item.css';
 const Item = (data: types.Item_data) => {
-
   return (
     <div className='item space-x-1'>
       <div className='sub-item1'>
