@@ -78,17 +78,38 @@ const Header = () => {
             </ul>
           </div>
           <div className='user-avatar flex justify-end space-x-6'>
-            <div className='avatar-img cursor-pointer hover:opacity-90 hover:outline-primary' onClick={() => handleUserClick('user')}>
+            {/* <div className='avatar-img cursor-pointer hover:opacity-90 hover:outline-primary' onClick={() => handleUserClick('user')}>
               <img src='/avatar-icon.png'></img>
+            </div> */}
+            <div className="dropdown dropdown-end">
+              <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className="w-16 rounded-full">
+                  <img src='/avatar-icon.png'></img>
+                </div>
+              </div>
+              <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-neutral rounded-box w-52">
+                <li>
+                  <Link className="justify-between" href='/profile'>
+                    Profile
+                    <span className="badge">New</span>
+                  </Link>
+                </li>
+                <li><a>Settings</a></li>
+                <li><a>Logout</a></li>
+              </ul>
             </div>
-            <div className='avatar-img cursor-pointer hover:opacity-90' onClick={() => handleUserClick('wallet')}>
-              <img src='/wallet-icon.svg' />
+            <div className="dropdown dropdown-end">
+              <div tabIndex={1} role="button" className="btn btn-ghost btn-circle avatar">
+                <div className='w-16 rounded-full cursor-pointer hover:opacity-90' onClick={() => handleUserClick('wallet')}>
+                  <img alt='2' src='/wallet-icon.svg' className='w-full' />
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-    </div>
+    </div >
   );
 }
 
