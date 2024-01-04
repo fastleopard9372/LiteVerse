@@ -8,7 +8,7 @@ const Card1 = (data: types.Card1_data) => {
         <div className='card-container'>
           <div className="card-body">
             <div className='card-img'>
-              <img src={data.background} />
+              <img src={data.background} className='w-full' />
               <div className='card-like flex justify-center'>
                 <h3 className='mr-2'>{data.like}</h3>
                 <img src='/card1/like.svg' />

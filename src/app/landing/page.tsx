@@ -224,7 +224,7 @@ const Landing = () => {
       <div className='section1 flex justify-center items-center h-[650px]'>
         <div className='back'>
         </div>
-        <div className='section front flex justify-between items-center  z-50'>
+        <div className='section front flex justify-between items-center z-50'>
           <div className='text-section flex flex-col justify-center items-start'>
             <p className='text-5xl mb-7'>
               <span className='p1'>Discover,</span>
@@ -250,7 +250,7 @@ const Landing = () => {
             {/*  </span>*/}
             {/*</div>*/}
           </div>
-          <div className='card-section  ml-3'>
+          <div className='card-section  ml-3  max-sm:hidden'>
             <div className='card-img'>
               <img src='/card.png'></img>
             </div>
@@ -350,10 +350,10 @@ const Landing = () => {
       <div className='section section3'>
         <div className='card-group'>
           <div className='title flex justify-center'>
-            <span>Top Ordinals over</span>
-            <span className='sub-title flex'><span className='mr-2'>last 7 days </span><img src="./item/down-arrow.svg"></img></span>
+            <span className=" max-sm:text-2xl">Top Ordinals over</span>
+            <span className=' max-sm:text-xl sub-title flex'><span className='mr-2'>last 7 days </span><img src="./item/down-arrow.svg"></img></span>
           </div>
-          <div className='grid grid-cols-3 gap-5 mt-10'>
+          <div className='grid grid-cols-3 gap-5 mt-10 max-lg:grid-cols-2 max-sm:grid-cols-1'>
             {
               item_data.map((value, index) => (
                 <Item {...value} key={index} />
@@ -368,8 +368,8 @@ const Landing = () => {
       <div className='section section4'>
         <div className='card-group'>
           <div className='title flex justify-center'>
-            <span>Trending in</span>
-            <span className='sub-title flex'><span className='mr-2'>all categories </span><img src="./item/down-arrow.svg"></img></span>
+            <span className=" max-sm:text-2xl">Trending in</span>
+            <span className=' max-sm:text-xl sub-title flex'><span className='mr-2'>all categories </span><img src="./item/down-arrow.svg"></img></span>
           </div>
           <div style={{ paddingBottom: '30px', position: 'relative' }}>
             <Carousel
@@ -435,9 +435,9 @@ const Landing = () => {
       <div className='section section5'>
         <div className='card-group'>
           <div className='title flex justify-center'>
-            <span>Create and sell your Ordinals</span>
+            <span className=" max-sm:text-2xl">Create and sell your Ordinals</span>
           </div>
-          <div className='grid grid-cols-3 gap-5 mt-10'>
+          <div className='grid grid-cols-3 gap-5 mt-10 max-lg:grid-cols-2 max-sm:grid-cols-1'>
             {
               card3_data.map((value, index) => (
                 <Card3 {...value} key={index} />
@@ -452,7 +452,7 @@ const Landing = () => {
           <div className='title flex justify-center'>
             <span>Create and sell your Ordinals</span>
           </div>
-          <div className='grid grid-cols-3 gap-5 mt-10 '>
+          <div className='grid grid-cols-3 gap-5 mt-10 max-lg:grid-cols-2'>
             {
               card4_data.map((value, index) => (
                 <Card4 {...value} key={index} />
@@ -470,8 +470,8 @@ const Landing = () => {
           {/*  <span>The Ordinal marketplace with everything for everyone</span>*/}
           {/*</div>*/}
           {/*<div className='flex justify-center flex-col items-center p-20'>*/}
-            {/*<img src="/image 3.png" style={{ cursor: "pointer" }} />*/}
-            {/* <ReactPlayer  width="800px" 
+          {/*<img src="/image 3.png" style={{ cursor: "pointer" }} />*/}
+          {/* <ReactPlayer  width="800px" 
             height="600px"/> */}
           {/*</div>*/}
           <div className=' flex justify-center mb-10'>

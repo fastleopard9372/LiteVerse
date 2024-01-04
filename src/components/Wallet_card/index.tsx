@@ -116,7 +116,7 @@ const Wallet_card = (data: types.Wallet_connect) => {
 
   }
   return (
-    <div className='p-2 w-1/4 pb-6' onClick={() => handleClick(data.title, data.link)}>
+    <div className='p-2 w-96 pb-6' onClick={() => handleClick(data.title, data.link)}>
       <div className="card bg-neutral shadow-xl cursor-pointer hover:opacity-95 hover:-translate-y-2 hover:animate-spin">
         <div className="card-body flex justify-center items-center p-5">
           <div className="avatar">

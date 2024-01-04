@@ -7,12 +7,12 @@ const Description = () => {
   }
   return (
     <>
-      <div className='flex justify-between items-center gap-4'>
+      <div className='flex justify-between items-center gap-4 description flex-wrap'>
         <button className={`btn btn-sm ${innerBtn === 'details' ? 'btn-primary' : 'btn-outline'}`} onClick={() => handleInnerClick('detail')}>Details</button>
         <button className={`btn btn-sm ${innerBtn === 'bids' ? 'btn-primary' : 'btn-outline'}`} onClick={() => handleInnerClick('bids')}>Bids</button>
         <button className={`btn btn-sm ${innerBtn === 'history' ? 'btn-primary' : 'btn-outline'}`} onClick={() => handleInnerClick('history')}>History</button>
         <div className='grow'></div>
-        <select className="select select-bordered select-sm">
+        <select className="select select-bordered select-sm max-sm:w-full">
           <option>Recent Active</option>
           <option>Recent Active</option>
           <option>Recent Active</option>

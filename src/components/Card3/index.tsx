@@ -15,7 +15,7 @@ const Card3 = (data: types.Card3_data) => {
 
       </div>
       <a href={data.link}>
-        <div className="text-2xl text-center font-semibold mt-8">{data.title}</div>
+        <div className="text-2xl text-center font-semibold mt-8  max-sm:text-xl">{data.title}</div>
       </a>
       <div className='text-sm text-center text-neutral-400 mt-3 px-2'>{data.content}</div>
     </div>

@@ -101,6 +101,9 @@ main {
   @apply rounded-lg;
   @apply px-5;
 }
+.description .btn {
+  @apply px-2;
+}
 .btn-sm {
   @apply rounded-[4px];
 }
@@ -121,9 +124,14 @@ main {
   margin: auto;
   width: 100% !important;
 }
+@media (max-width: 1023.91px) {
+  .section {
+    width: 90% !important;
+  }
+}
 @media (min-width: 1024px) {
   .section {
-    width: 1000px !important;
+    width: 900px !important;
   }
 }
 @media (min-width: 1280px) {

@@ -15,9 +15,9 @@ const Inscribe = () => {
     <div className='section p-5'>
       <div className='base-100'>
         <div className="card w-full bg-neutral shadow-xl mt-8 mb-8 px-0">
-          <div className="card-body px-0">
+          <div className="card-body max-sm:p-5">
             <div className='grid grid-cols-3 gap-8'>
-              <div className='col-span-1 flex flex-col justify-between'>
+              <div className='col-span-1 flex flex-col justify-between max-sm:col-span-3'>
                 <p className='text-xl font-bold text-primary mb-2'>Upload Here</p>
                 <p className='text-base mb-5'>Drag or choose your file to upload</p>
                 <div className='bg-base-100 border-stone-400 rounded-md border p-3 flex justify-center items-center'>
@@ -37,7 +37,7 @@ const Inscribe = () => {
                   {/*<p className='text-base mb-2'>You will receive : 1 LTC $65</p>*/}
                 </div>
               </div>
-              <div className='card col-span-2  bg-base-100'>
+              <div className='card col-span-2  bg-base-100  max-sm:col-span-3'>
                 <div className="card-body">
                   <label className="form-control w-full">
                     <div className="label">
@@ -80,12 +80,12 @@ const Inscribe = () => {
               </div>
             </div>
 
-            <div className='card col-span-2  bg-base-100 mt-5'>
-              <div className="flex-row card-body space-x-3">
-                <button type="button" className='btn btn-primary'>Cancel</button>
-                <button type="button" className='btn btn-outline'>Preview</button>
-                <div className='flex-grow'></div>
-                <button type="button" className='btn btn-primary'>Create</button>
+            <div className='card col-span-2  bg-base-100 mt-5 '>
+              <div className="flex-row card-body space-x-3  max-sm:space-x-1  max-sm:px-3">
+                <button type="button" className='btn btn-primary max-sm:btn-sm'>Cancel</button>
+                <button type="button" className='btn btn-outline max-sm:btn-sm'>Preview</button>
+                <div className='flex-grow '></div>
+                <button type="button" className='btn btn-primary max-sm:btn-sm'>Create</button>
               </div>
             </div>
           </div>
