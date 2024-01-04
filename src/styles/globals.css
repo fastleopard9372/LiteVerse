@@ -153,8 +153,13 @@ main {
   gap: 15px;
 }
 .logo_image {
-  background-color: var(--primary1);
   width: 67px;
+  height: 67px;
+  border-radius: 10px;
+}
+
+.logo_name {
+  width: 200px;
   height: 67px;
   border-radius: 10px;
 }

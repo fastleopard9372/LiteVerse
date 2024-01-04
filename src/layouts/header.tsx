@@ -7,9 +7,9 @@ import Image from 'next/image';
 import { HtmlContext } from 'next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints';
 const navigation = [
   { name: 'Explorer', href: '/', active: 'false' },
-  { name: 'State', href: '#', active: '' },
-  { name: 'Creators', href: '/creators', active: '' },
-  { name: 'Contact', href: '#', active: '' },
+  // { name: 'State', href: '#', active: '' },
+  { name: 'Inscribe', href: '/inscribe', active: '' },
+  // { name: 'Contact', href: '#', active: '' },
 ]
 
 const Header = () => {
@@ -47,8 +47,8 @@ const Header = () => {
         <div className="flex justify-start">
           <Link href='/' onClick={() => handleClick(0)}>
             <div className='logo'>
-              <div className='logo_image'></div>
-              <p className='logo_name'>Logo Name</p>
+              <div className='logo_image'><img src={"LV Heart Diamond - No Shadow@4x.png"} alt={"Logo Image"}/></div>
+              <p className='logo_name'><img src={"LV landscae with tagline - Color Reverse@4x.png"} alt={"Logo Image"}/></p>
             </div>
           </Link>
           <div className='search-part flex justify-end items-center md:w-auto' >
@@ -91,11 +91,11 @@ const Header = () => {
                 <li>
                   <Link className="justify-between" href='/profile'>
                     Profile
-                    <span className="badge">New</span>
+                    {/*<span className="badge">New</span>*/}
                   </Link>
                 </li>
                 <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
+                <li><a>Disconnect Wallet</a></li>
               </ul>
             </div>
             <div className="dropdown dropdown-end">
