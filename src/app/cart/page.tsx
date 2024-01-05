@@ -56,7 +56,7 @@ const Cart = () => {
                     <button type='button' className='btn btn-neutral btn-sm'>
                       <span className='text-primary'><FaHeart /></span>Art
                     </button>
-                    <div className='grow max-sm:hidden'></div>
+                    <div className='grow'></div>
 
                     <div className='grid grid-cols-2 gap-3 max-sm:gap-1'>
                       <button className='btn btn-circle btn-outline border-primary bg-neutral-950 btn-sm'>

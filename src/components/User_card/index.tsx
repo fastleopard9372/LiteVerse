@@ -3,7 +3,7 @@ import types from '@/types'
 const User_card = (data: types.User_data) => {
   return (
     <div className="card bg-neutral shadow-xl">
-      <div className="card-body flex justify-center items-center text-center pt-10 pb-10 p-5 max-lg:flex-row max-lg:justify-around">
+      <div className="card-body flex justify-center items-center text-center pt-10 pb-10 p-5 max-sm:flex-col max-lg:flex-row max-lg:justify-around">
         <div className="avatar ">
           <div className="w-full rounded-full ring ring-primary ">
             <img src={data.avatar} />

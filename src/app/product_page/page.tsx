@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, MouseEvent } from 'react'
+import React, { useState, MouseEvent, useEffect } from 'react'
 import Carousel, { ReactElasticCarouselProps } from 'react-elastic-carousel'
 import classNames from 'classnames';
 import Style_item from '@/components/Style_item';
@@ -119,9 +119,37 @@ const card1_data: types.Card1_data[] = [{
   value: 76.4
 }]
 
+function getWindowDimensions() {
+  if (typeof window !== "undefined") {
+    const { innerWidth: width, innerHeight: height } = window;
+    return {
+      width,
+      height
+    };
+  } else {
+    return { width: 1440, height: 800 };
+  }
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowDimensions;
+}
+
 const Product_page = () => {
-  var carousel: any = null;
-  const item_config = {
+  const { height, width } = useWindowDimensions();
+  const [carousel, setCarousel] = useState<any>(null);
+  const [item_config, setItem_config] = useState({
     itemsToScroll: 1,
     itemsToShow: 4,
     showArrows: false,
@@ -129,16 +157,32 @@ const Product_page = () => {
     verticalMode: true,
     isRTL: false,
     ref: function (ref: any) {
-      carousel = ref;
+      setCarousel(ref);
       return carousel;
     }
-  }
-
+  })
+  useEffect(() => {
+    if (width <= 1024) {
+      setItem_config({
+        ...item_config, itemsToShow: 5, showArrows: true, verticalMode: false, ref: function (ref: any) {
+          setCarousel(ref);
+          return carousel;
+        }
+      })
+    } else {
+      setItem_config({
+        ...item_config, itemsToShow: 4, showArrows: false, verticalMode: true, ref: function (ref: any) {
+          setCarousel(ref);
+          return carousel;
+        }
+      })
+    }
+  }, [width])
   const [viewBtn, setViewBtn] = useState<string>('all');
-
   const handleViewClick = (name: string) => {
     setViewBtn(name);
   }
+
   return (
     <div className='section pb-20' style={{ fontFamily: 'Josefin Sans' }}>
       <div className='card px-0'>
@@ -146,30 +190,30 @@ const Product_page = () => {
           <div className=' pt-10 grid grid-cols-2 gap-5 pb-14'>
             <button type='button' className='btn btn-primary btn-sm top-0.5 col-span-2 w-32'>Back to home</button>
             <div className="grid grid-cols-12 gap-5 py-3 col-span-2">
-              <div className='col-span-2 relative'>
+              <div className='col-span-2 relative max-lg:col-span-12'>
                 <button type='button' onClick={() => carousel.slidePrev()}
-                  className='btn btn-sm w-9 absolute z-50 top-3.5 left-1' style={{ padding: '0 !important', opacity: 0.8 }}>
+                  className='btn btn-sm w-9 absolute z-50 top-3.5 left-1 max-lg:hidden' style={{ padding: '0 !important', opacity: 0.8 }}>
                   <img src='/product_data/arrow-up.svg'></img>
                 </button>
                 <Carousel {...item_config} >
                   {items.map((item, index) =>
                     <Style_item key={index}>
-                      <img src={item.url} className='w-full h-full' />
+                      <img src={item.url} className='w-full h-full max-lg:p-2' />
                     </Style_item>
                   )}
                 </Carousel>
                 <button type='button'
                   onClick={() => carousel.slideNext()}
-                  className='btn btn-sm w-9 absolute bottom-3.5 left-1 z-50' style={{ padding: '0 !important', opacity: 0.8 }}>
+                  className='btn btn-sm w-9 absolute bottom-3.5 left-1 z-50  max-lg:hidden' style={{ padding: '0 !important', opacity: 0.8 }}>
                   <img src='/product_data/arrow-down.svg'></img>
                 </button>
               </div>
-              <div className='col-span-10 pt-1 gap-5'>
+              <div className='col-span-10 pt-1 gap-5  max-lg:col-span-12'>
                 <div className='grid grid-cols-5 gap-5'>
                   <div className='col-span-2'>
-                    <img src='/product_data/image (3).png' className='w-full' />
+                    <img src='/product_data/image (3).png' className='w-full rounded-3xl' />
                   </div>
-                  <div className='col-span-3 font-medium'>
+                  <div className='col-span-3 font-medium  max-sm:col-span-5'>
                     <div className='text-4xl pb-4'>Creative ProductName</div>
                     <div className='text-2xl flex space-x-2  pb-4 opacity-50'>
                       <span>Code: </span>
@@ -204,7 +248,7 @@ const Product_page = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col justify-between items-start space-y-2 p-10 pb-0'>
+                <div className='flex flex-col justify-between items-start space-y-2 p-10 pb-0 max-sm:px-0'>
                   <div className='flex space-x-3 text-xl'>
                     <span className='opacity-50'>AVAILABILITY : </span>
                     <span>In Stock</span>
@@ -217,7 +261,7 @@ const Product_page = () => {
                     <span className='opacity-50'> ETH/ $5479.88</span>
                   </div>
                   <button type='button' className='btn btn-primary py-4'>ADD TO CART</button>
-                  <div className='flex justify-start items-center space-x-5 py-4'>
+                  <div className='flex justify-start items-center space-x-5 py-4 max-sm:flex-col max-md:flex-col max-md:space-x-0 max-md:space-y-5 max-md:items-start'>
                     <button type='button' className='btn btn-outline btn-primary'>
                       <img src='/product_data/like.svg'></img>
                       <span className='text-[20px] font-normal'>Add To Wallet</span>
@@ -227,7 +271,7 @@ const Product_page = () => {
                       <span className='text-[20px] font-normal'>Add To Category</span>
                     </button>
                   </div>
-                  <div className='grow flex flex-start items-center space-x-3'>
+                  <div className='grow flex flex-start items-center space-x-3 max-md:flex-col max-md:space-x-0 max-md:space-y-5 max-md:items-start'>
                     <p className='opacity-50'>SHARE</p>
                     <button type='button' className='btn  btn-success btn-sm flex '>
                       <img src='/product_data/function.svg'></img>
@@ -249,25 +293,27 @@ const Product_page = () => {
                 </div>
               </div>
             </div>
-            <div className='grid grid-cols-1'>
+            <div className='grid grid-cols-1 max-md:col-span-2'>
               <Description />
             </div>
           </div>
           <div className='grid grid-cols-1 '>
-            <div className='flex justify-between items-center space-x-3  pr-2'>
+            <div className='flex justify-between items-center space-x-3 description pr-2 max-md:flex-col  max-md:items-start'>
               <div>
                 <p className='text-lg'>Exclusive Assets</p>
                 <p className='text-primary text-5xl'>Explore</p>
               </div>
               <div className='grow'></div>
-              <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'all' !== viewBtn })} onClick={() => handleViewClick('all')}>All NFTs</button>
-              <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'art' !== viewBtn })} onClick={() => handleViewClick('art')}>Art</button>
-              <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'collect' !== viewBtn })} onClick={() => handleViewClick('collect')}>Collectibles</button>
-              <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'virtual' !== viewBtn })} onClick={() => handleViewClick('virtual')}>Virtual Worlds</button>
-              <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'trading' !== viewBtn })} onClick={() => handleViewClick('trading')}>Tranding Cards</button>
+              <div className='flex justify-between space-x-3 max-md:flex-col max-md:justify-start  max-md:space-y-5  max-md:space-x-0'>
+                <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'all' !== viewBtn })} onClick={() => handleViewClick('all')}>All NFTs</button>
+                <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'art' !== viewBtn })} onClick={() => handleViewClick('art')}>Art</button>
+                <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'collect' !== viewBtn })} onClick={() => handleViewClick('collect')}>Collectibles</button>
+                <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'virtual' !== viewBtn })} onClick={() => handleViewClick('virtual')}>Virtual Worlds</button>
+                <button type='button' className={classNames('btn btn-primary btn-sm', { 'btn-outline': 'trading' !== viewBtn })} onClick={() => handleViewClick('trading')}>Tranding Cards</button>
+              </div>
             </div>
           </div>
-          <div className='grid grid-cols-3 gap-3'>
+          <div className='grid grid-cols-3 gap-3 max-lg:grid-cols-2 max-sm:grid-cols-1'>
             {card1_data.map((value, item) => (
               <Card1 {...value} />
             ))}
