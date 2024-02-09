@@ -1,5 +1,11 @@
 
 // https://daisyui.com/components/avatar/
+export interface Ordinal { 
+  total: number,
+  mint_progress_cnt: number,
+  items:Array<>
+}
+
 export interface Wallet_connect { 
   _id: string,
   url:string,

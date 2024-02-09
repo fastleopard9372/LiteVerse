@@ -1,0 +1,22 @@
+https://geniidata.readme.io/reference/get-sns-info-by-name-copy
+
+https://docs.unisat.io/dev/unisat-developer-service/brc-20/get-brc-20-ticker-info
+
+https://docs.hiro.so/ordinals/brc-20-tokens
+
+https://docs.magiceden.io/reference/gettickinfo
+
+https://docs.bestinslot.xyz/reference/api-reference/brc-20-obsolete
+
+https://docs.ordinalscan.net/tokens-brc-20/token
+
+https://docs.bestinslot.xyz/reference/api-reference/ordinals-and-brc-20-and-bitmap-v3-api-mainnet+testnet
+
+https://docs.unisat.io/dev/unisat-developer-service/brc-20/get-brc-20-list
+
+
+
+Thanks! If you use Discord, join our server and ping @nylig in the #api-chat to get your keys.
+
+
+patMM1jyNgtNj1qJK.3de087b4ead4d1c3a42e677fc683f0f646ff15e917a6334ad4f33086674f9b02

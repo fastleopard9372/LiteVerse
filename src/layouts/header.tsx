@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import Image from 'next/image';
 import { setTimeout } from 'timers';
 const navigation = [
-  { name: 'Explorer', href: '/', active: 'false' },
+  { name: 'Explorer', href: '/explorer', active: 'false' },
   // { name: 'State', href: '#', active: '' },
   { name: 'Inscribe', href: '/inscribe', active: '' },
   // { name: 'Contact', href: '#', active: '' },
